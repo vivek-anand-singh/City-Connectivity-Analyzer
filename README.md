@@ -25,23 +25,35 @@ An interactive web application that models a city's road network as a graph and 
 - **Component Visualization**: Show disconnected parts with different colors
 - **Statistics Charts**: Bar charts and metrics for network analysis
 
-## 🏗️ Architecture
+## 🏗️ Project Structure
 
 ```
-city-connectivity-analyzer/
-├── app.py                 # Streamlit frontend application
-├── city_graph.py          # Core graph class and algorithms
-├── visualizer.py          # Visualization utilities
-├── requirements.txt       # Python dependencies
-└── README.md             # Project documentation
+City-Connectivity-Analyzer/
+├── app.py                  # Streamlit frontend application (entry point)
+├── requirements.txt        # Python dependencies
+├── setup.py                # Project setup
+├── README.md               # Project documentation
+└── src/
+    ├── core/
+    │   ├── graph.py        # Core graph class and operations
+    │   ├── metrics.py      # Graph metrics and analysis
+    │   └── algorithms/     # Graph algorithms (dijkstra, kruskal, connectivity)
+    ├── ui/
+    │   ├── components/     # UI components (sidebar, metrics cards)
+    │   └── pages/          # Streamlit pages (network view, analysis, etc.)
+    ├── utils/
+    │   └── data_loader.py  # Data loading utilities
+    └── visualization/
+        ├── charts.py       # Chart visualizations
+        └── network_plots.py# Network graph visualizations
 ```
 
 ## 🛠️ Installation
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd city-connectivity-analyzer
+   git clone https://github.com/vivek-anand-singh/City-Connectivity-Analyzer.git
+   cd City-Connectivity-Analyzer
    ```
 
 2. **Install dependencies**:
@@ -143,7 +155,7 @@ The application tracks several important network properties:
 
 ### Data Structures
 - **Adjacency List**: Main graph representation
-- **CityGraph Class**: Core graph operations and algorithms
+- **Graph Class**: Core graph operations and algorithms (see `src/core/graph.py`)
 - **NetworkX Integration**: For advanced graph analysis
 
 ### Performance
@@ -195,8 +207,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### Getting Help
 
 - Check the documentation in each module
-- Review the algorithm implementations in `city_graph.py`
-- Examine the visualization utilities in `visualizer.py`
+- Review the algorithm implementations in `src/core/graph.py` and `src/core/algorithms/`
+- Examine the visualization utilities in `src/visualization/`
 
 ## 🎯 Educational Value
 
